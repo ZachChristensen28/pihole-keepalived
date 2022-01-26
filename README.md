@@ -1,2 +1,3 @@
 # pihole-keepalived
-Implement Keepalived with Pi-hole
+
+![Docs](https://github.com/ZachChristensen28/pihole-keepalived/actions/workflows/ci.yml/badge.svg)
