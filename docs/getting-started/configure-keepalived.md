@@ -35,17 +35,17 @@ Use the editor of your choice to open the keepalived configuration on both Prima
 sudo nano /etc/keepalived/keepalived.conf
 ```
 
-### First Node
+### Primary Server <small>(Master)</small>
 
 Change the values according to the following table.
 
 Field | Current Value | Change to
 ----- | ------------- | ---------
-interface | eth0 | Primary Interface
-unicast_src_ip | 10.0.100.11 | Your Primary Server IP
-unicast_peer | 10.0.100.12 | Your Secondary Server IP
+interface | eth0 | Your Primary server's Interface.
+unicast_src_ip | 10.0.100.11 | Your Primary server's IP.
+unicast_peer | 10.0.100.12 | Your Secondary server's IP.
 auth_pass | xxXxxxXX | New 8 character password. (This will be the same in both configurations)
-virtual_ipaddress | 10.0.100.10/24 | Your chosen VIP
+virtual_ipaddress | 10.0.100.10/24 | Your chosen VIP.
 
 ```text
 vrrp_track_process ftl {
@@ -82,17 +82,17 @@ vrrp_instance PIHOLE {
 }
 ```
 
-### Second Node
+### Sendondary Server <small>(Backup)</small>
 
 Change the values according to the following table.
 
 Field | Current Value | Change to
 ----- | ------------- | ---------
-interface | ens192 | Secondary Interface
-unicast_src_ip | 10.0.100.12 | Your Secondary Server IP
-unicast_peer | 10.0.100.11 | Your Primary Server IP
+interface | ens192 | Your Secondary server's Interface.
+unicast_src_ip | 10.0.100.12 | Your Secondary server's IP.
+unicast_peer | 10.0.100.11 | Your Primary server's IP.
 auth_pass | xxXxxxXX | New 8 character password. (This will be the same in both configurations)
-virtual_ipaddress | 10.0.100.10/24 | Your chosen VIP
+virtual_ipaddress | 10.0.100.10/24 | Your chosen VIP.
 
 ```text
 vrrp_track_process ftl {
