@@ -71,5 +71,7 @@ nav:
     - Install: getting-started/install-keepalived.md
     - Configure: getting-started/configure-keepalived.md
     - Validate: getting-started/validate-configuration.md
+    - What Next:
+      - Gravity Sync: next-steps/gravity-sync.md
   - Feedback:
     - feedback/index.md
