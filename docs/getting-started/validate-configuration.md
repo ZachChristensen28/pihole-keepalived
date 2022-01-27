@@ -63,7 +63,7 @@ echo "BREAK" | sudo tee /etc/dnsmasq.d/99-failover-test.conf
     pihole restartdns
     ```
 
-Check the status Pihole to ensure DNS is not working.
+Check the status of Pihole to ensure DNS is not working.
 
 ```shell
 pihole status
