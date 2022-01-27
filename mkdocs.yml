@@ -20,6 +20,9 @@ markdown_extensions:
   - abbr
   - pymdownx.snippets
   - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
 
 theme:
   name: material
@@ -35,6 +38,7 @@ theme:
     - navigation.indexes
     - navigation.sections
     - navigation.top
+    - content.code.annotate
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default

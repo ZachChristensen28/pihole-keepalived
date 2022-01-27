@@ -15,7 +15,7 @@ ip -br a
     ens192           UP             10.0.100.12/24 fe81::21c:24fe:fe2a:4c96/64
     ```
 
-    The interface I would use for this example is `ens192` with the ip `10.0.100.12`
+    The interface, for this example, is `ens192` with the ip `10.0.100.12`
 
 Example values that will be used.
 
@@ -25,7 +25,7 @@ Primary | eth0 | 10.0.100.11
 Secondary | ens192 | 10.0.100.12
 VIP* | - | 10.0.100.10/24
 
-<small>_\*the VIP is any unused IP space in your subnet. This example will use `10.0.100.10/24`._</small>
+<small>_\*the VIP is any unused IP space in your subnet. This example will use `10.0.100.10/24` (as shown in the above table)._</small>
 
 ## Configuration
 
@@ -47,7 +47,7 @@ unicast_peer | 10.0.100.12 | Your Secondary server's IP.
 auth_pass | xxXxxxXX | New 8 character password. (This will be the same in both configurations)
 virtual_ipaddress | 10.0.100.10/24 | Your chosen VIP.
 
-```text
+``` text hl_lines="10 14 16 21 25" title="Primary Server: /etc/keepalived/keepalived.conf"
 vrrp_track_process ftl {
     process "/usr/bin/pihole-FTL"
     delay 2
@@ -94,7 +94,7 @@ unicast_peer | 10.0.100.11 | Your Primary server's IP.
 auth_pass | xxXxxxXX | New 8 character password. (This will be the same in both configurations)
 virtual_ipaddress | 10.0.100.10/24 | Your chosen VIP.
 
-```text
+``` text hl_lines="10 14 16 21 25" title="Secondary Server: /etc/keepalived/keepalived.conf"
 vrrp_track_process ftl {
     process "/usr/bin/pihole-FTL"
     delay 2
