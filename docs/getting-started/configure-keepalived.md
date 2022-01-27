@@ -47,7 +47,7 @@ unicast_peer | 10.0.100.12 | Your Secondary server's IP.
 auth_pass | xxXxxxXX | New 8 character password. (This will be the same in both configurations)
 virtual_ipaddress | 10.0.100.10/24 | Your chosen VIP.
 
-``` text hl_lines="10 14 16 21 25" title="Primary Server: /etc/keepalived/keepalived.conf"
+``` shell hl_lines="10 14 16 21 25" title="Primary Server: /etc/keepalived/keepalived.conf"
 vrrp_track_process ftl {
     process "/usr/bin/pihole-FTL"
     delay 2
@@ -68,7 +68,7 @@ vrrp_instance PIHOLE {
 
     authentication {
         auth_type PASS
-        auth_pass xxXxxxXX
+        auth_pass xxXxxxXX # (1)
     }
 
     virtual_ipaddress {
@@ -82,6 +82,8 @@ vrrp_instance PIHOLE {
 }
 ```
 
+1. `auth_pass` **must** match on both Primary and Secondary servers.
+
 ### Secondary Server <small>(Backup)</small>
 
 Change the values according to the following table.
@@ -94,7 +96,7 @@ unicast_peer | 10.0.100.11 | Your Primary server's IP.
 auth_pass | xxXxxxXX | New 8 character password. (This will be the same in both configurations)
 virtual_ipaddress | 10.0.100.10/24 | Your chosen VIP.
 
-``` text hl_lines="10 14 16 21 25" title="Secondary Server: /etc/keepalived/keepalived.conf"
+``` shell hl_lines="10 14 16 21 25" title="Secondary Server: /etc/keepalived/keepalived.conf"
 vrrp_track_process ftl {
     process "/usr/bin/pihole-FTL"
     delay 2
@@ -115,7 +117,7 @@ vrrp_instance PIHOLE {
 
     authentication {
         auth_type PASS
-        auth_pass xxXxxxXX
+        auth_pass xxXxxxXX # (1)
     }
 
     virtual_ipaddress {
@@ -129,7 +131,7 @@ vrrp_instance PIHOLE {
 }
 ```
 
---8<-- "includes/abbreviations.md"
+1. `auth_pass` **must** match on both Primary and Secondary servers.
 
 ## Restart Keepalived
 
@@ -158,3 +160,5 @@ To check the status run the following.
 ```shell
 sudo systemctl status keepalived.service
 ```
+
+--8<-- "includes/abbreviations.md"
