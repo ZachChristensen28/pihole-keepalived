@@ -82,7 +82,7 @@ vrrp_instance PIHOLE {
 }
 ```
 
-### Sendondary Server <small>(Backup)</small>
+### Secondary Server <small>(Backup)</small>
 
 Change the values according to the following table.
 
