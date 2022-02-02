@@ -22,5 +22,5 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git fetch origin gh-pages --depth=1
-          mike deploy --push --update-aliases 2.0 latest
+          mike deploy --push --update-aliases 2.1 dev
           mike set-default --push latest
