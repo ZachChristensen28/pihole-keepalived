@@ -19,5 +19,6 @@ jobs:
           path: "docs/requirements.txt"
       # - run: mkdocs gh-deploy --force
       - run: |
+        git fetch origin gh-pages --depth=1
         mike deploy --push --update-aliases 1.0 latest
         mike set-default --push latest
