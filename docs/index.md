@@ -19,4 +19,6 @@ hide:
 
 [Get Started](getting-started/tested-configuration/){ .md-button .md-button--primary }
 
+v2
+
 --8<-- "includes/abbreviations.md"
