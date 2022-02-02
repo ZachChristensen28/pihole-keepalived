@@ -19,6 +19,8 @@ jobs:
           path: "docs/requirements.txt"
       # - run: mkdocs gh-deploy --force
       - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git fetch origin gh-pages --depth=1
           mike deploy --push --update-aliases 1.0 latest
           mike set-default --push latest
