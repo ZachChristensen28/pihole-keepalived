@@ -1,6 +1,6 @@
 # Install Keepalived
 
-## Ubuntu/Raspberry Pi OS
+## Ubuntu
 
 Use snap to install the latest version of keepalived and apt to install libipset13.
 
