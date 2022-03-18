@@ -2,7 +2,7 @@
 
 ## Determine your IP address
 
-Run the following command to find your IP address and interface in use on both primary and secondary servers.
+Run the following command to find your IP address and interface in use on primary and backup servers.
 
 ```shell
 ip -br a
