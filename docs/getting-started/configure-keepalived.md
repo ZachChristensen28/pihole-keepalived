@@ -95,6 +95,7 @@ global_defs{
 
 vrrp_track_process ftl { # (4)
     process "/usr/bin/pihole-FTL"
+    weight 10
     delay 2
     quorum 1
     full_command true
@@ -102,6 +103,7 @@ vrrp_track_process ftl { # (4)
 
 vrrp_script check_dns {
     script /etc/keepalived/check-dns.sh # (5)
+    weight 10
     interval 4
     timeout 2
 }
@@ -161,6 +163,7 @@ global_defs{
 
 vrrp_track_process ftl { # (4)
     process "/usr/bin/pihole-FTL"
+    weight 10
     delay 2
     quorum 1
     full_command true
@@ -168,6 +171,7 @@ vrrp_track_process ftl { # (4)
 
 vrrp_script check_dns {
     script /etc/keepalived/check-dns.sh # (5)
+    weight 10
     interval 4
     timeout 2
 }
